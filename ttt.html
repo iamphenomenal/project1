@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ric-Tac-Moe</title>
+    <link rel="stylesheet" href="ttt.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Ric-Tac-Moe</h1>
+    <div class="winner">
+        <h2>Winner is .....</h2>
+    </div>
+    <button class="reset">
+        New Game
+    </button>
+
+  </div>
+    
+<main>
+    
+    <div class="container">
+        <div class="game">
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>     
+         </div>
+
+    </div>
+</div>
+
+</main>
+
+
+    
+</body>
+</html>
+<script>
+let boxes=document.querySelectorAll(".box");
+let reset = document.querySelector(".reset");
+let winner=document.querySelector(".winner");
+
+let turn=true;
+let win=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+
+boxes.forEach((box)=> {
+    box.addEventListener("click",()=>{
+    console.log("clicked");
+if(turn)
+{
+    box.innerText="O";
+    turn=false;
+
+}
+else{
+    box.innerText="X";
+    turn=true;
+
+}
+
+ checkwinner();
+
+ })
+})
+const checkwinner= () =>{
+    for(let pattern of win){
+    let place1=boxes[pattern[0]].innerText;
+    let place2=boxes[pattern[1]].innerText;
+    let place3=boxes[pattern[2]].innerText;
+
+    if (place1!="" && place2!="" && place3!="")
+    {
+        if(place1===place2 && place2===place3){
+            winner.innerHTML=`<h2>Winner is ....</h2> ${place1}`;
+        }
+    }
+
+    }
+}
+reset.addEventListener("click",()=>{
+    location.reload();
+})
+
+
+</script>

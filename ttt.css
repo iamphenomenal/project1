@@ -1,0 +1,73 @@
+*{margin:0;
+    padding:0;
+
+}
+body{
+    text-align: center;
+    background-image: url("morty.jpg") ;
+    background-size: cover;
+    
+}
+.header{
+    margin-top:50px;
+
+}
+.winner{
+    margin-top:30px;
+
+}
+
+main{
+    height:750px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    height:600px;
+    width:600px;
+ display: flex;
+justify-content: center;
+
+}
+.game{
+    height: 90%;
+    width:90%;
+    background-color:transparent;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+.box{
+    height: 30%;
+    width:30%;
+    border-radius:5px;
+    border:2px solid black;
+background-color: rgba(0, 0, 0, 0.1);
+opacity: 1;
+}
+.box:hover{
+font-size: larger;
+background-color:black;
+color:white;}
+.reset{
+     height:40px;
+     width:100px;
+     background-color:transparent;
+     border-radius: 5px;
+     margin-top: 20px;
+     
+     
+}
+
+.reset:hover{
+color:white;
+background-color: black;
+
+}
+.winner{
+font-size: larger;
+
+}
